@@ -14,12 +14,12 @@ local utility = {}
 -- themes
 local objects = {}
 local themes = {
-	Background = Color3.fromRGB(24, 24, 24), 
-	Glow = Color3.fromRGB(0, 0, 0), 
-	Accent = Color3.fromRGB(10, 10, 10), 
-	LightContrast = Color3.fromRGB(20, 20, 20), 
-	DarkContrast = Color3.fromRGB(14, 14, 14),  
-	TextColor = Color3.fromRGB(255, 255, 255)
+	Background = Color3.fromRGB(200, 128, 128), 
+	Glow = Color3.fromRGB(200, 128, 128), 
+	Accent = Color3.fromRGB(120, 70, 70), 
+	LightContrast = Color3.fromRGB(180, 108, 108), 
+	DarkContrast = Color3.fromRGB(140, 88, 88),  
+	TextColor = Color3.fromRGB(255, 200, 200)
 }
 
 do
@@ -741,7 +741,7 @@ do
 				Font = Enum.Font.Gotham,
 				Text = title,
 				TextColor3 = themes.TextColor,
-				TextSize = 10,
+				TextSize = 9,
 				TextTransparency = 0.10000000149012
 			})
 		})
