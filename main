@@ -720,9 +720,9 @@ do
 		return button
 	end
 	
-	function section:addText(title, callback)
+	function section:addText(title)
 		local textt = utility:Create("ImageButton", {
-			Name = "Button",
+			Name = "Text",
 			Parent = self.container,
 			BackgroundTransparency = 1,
 			BorderSizePixel = 0,
