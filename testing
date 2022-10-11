@@ -544,8 +544,8 @@ do
 			utility:Create("ImageLabel", {
 				Name = "Icon",
 				BackgroundTransparency = 1,
-				Position = UDim2.new(0, -15, 0, -15),
-				Size = UDim2.new(0, 64, 0, 64),
+				Position = UDim2.new(0, -15, 0, -18),
+				Size = UDim2.new(0, 72, 0, 72),
 				ZIndex = 5,
 				Image = icon,
 				ImageColor3 = themes.IconColor,
