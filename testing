@@ -549,8 +549,7 @@ do
 				ZIndex = 5,
 				Image = icon,
 				ImageColor3 = themes.IconColor,
-				ScaleType = Enum.ScaleType.Slice,
-				SliceCenter = Rect.new(24, 24, 276, 276)
+				ScaleType = Enum.ScaleType.Crop
 
 			}),
 			utility:Create("TextLabel", {
