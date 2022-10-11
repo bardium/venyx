@@ -19,8 +19,7 @@ local themes = {
 	Accent = Color3.fromRGB(70, 120, 70), 
 	LightContrast = Color3.fromRGB(108, 180, 108), 
 	DarkContrast = Color3.fromRGB(88, 140, 88),  
-	TextColor = Color3.fromRGB(200, 255, 200),
-	IconColor = Color3.fromRGB(255,255,255)
+	TextColor = Color3.fromRGB(200, 255, 200)
 }
 
 do
@@ -501,7 +500,7 @@ do
 
 	-- new modules
 
-	function library:Notify(title, text, icon, callback)
+	function library:Notify(title, text, callback)
 
 		-- overwrite last notification
 		if self.activeNotification then
@@ -539,19 +538,6 @@ do
 				ImageColor3 = themes.Glow,
 				ScaleType = Enum.ScaleType.Slice,
 				SliceCenter = Rect.new(24, 24, 276, 276)
-			}),
-
-			utility:Create("ImageLabel", {
-				Name = "Icon",
-				BackgroundTransparency = 1,
-				Position = UDim2.new(0, -15, 0, -15),
-				Size = UDim2.new(0, 32, 0, 32),
-				ZIndex = 4,
-				Image = icon,
-				ImageColor3 = themes.IconColor,
-				ScaleType = Enum.ScaleType.Slice,
-				SliceCenter = Rect.new(24, 24, 276, 276)
-
 			}),
 			utility:Create("TextLabel", {
 				Name = "Title",
@@ -733,7 +719,7 @@ do
 
 		return button
 	end
-
+	
 	function section:addText(title)
 		local textt = utility:Create("ImageButton", {
 			Name = "Text",
@@ -765,7 +751,7 @@ do
 
 		local text = textt.Title
 		local debounce
-
+		
 		return textt
 	end
 
