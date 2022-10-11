@@ -555,7 +555,7 @@ do
 			utility:Create("TextLabel", {
 				Name = "Title",
 				BackgroundTransparency = 1,
-				Position = UDim2.new(0, 70, 0, 8),
+				Position = UDim2.new(0, 80, 0, 8),
 				Size = UDim2.new(1, -32, 0, 16),
 				ZIndex = 4,
 				Font = Enum.Font.GothamSemibold,
@@ -566,7 +566,7 @@ do
 			utility:Create("TextLabel", {
 				Name = "Text",
 				BackgroundTransparency = 1,
-				Position = UDim2.new(0, 70, 1, -24),
+				Position = UDim2.new(0, 80, 1, -24),
 				Size = UDim2.new(1, -32, 0, 16),
 				ZIndex = 4,
 				Font = Enum.Font.Gotham,
@@ -607,7 +607,7 @@ do
 		local padding = 10
 		local textSize = game:GetService("TextService"):GetTextSize(text, 12, Enum.Font.Gotham, Vector2.new(math.huge, 16))
 
-		notification.Position = library.lastNotification or UDim2.new(0, padding, 1, -(notification.AbsoluteSize.Y + padding))
+		notification.Position = library.lastNotification or UDim2.new(0, padding, 1, -(notification.AbsoluteSize.Y + padding + 84))
 		notification.Size = UDim2.new(0, 0, 0, 60)
 
 		utility:Tween(notification, {Size = UDim2.new(0, textSize.X + 130, 0, 60)}, 0.2)
