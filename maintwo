@@ -733,13 +733,13 @@ do
 		return button
 	end
 
-	function section:addText(title)
+	function section:addText(title, textSize, boxHeight)
 		local textt = utility:Create("ImageButton", {
 			Name = "Text",
 			Parent = self.container,
 			BackgroundTransparency = 1,
 			BorderSizePixel = 0,
-			Size = UDim2.new(1, 0, 0, 20),
+			Size = UDim2.new(1, 0, 0, boxHeight),
 			ZIndex = 2,
 			Image = "rbxassetid://5028857472",
 			ImageColor3 = themes.LightContrast,
@@ -754,7 +754,7 @@ do
 				Font = Enum.Font.Gotham,
 				Text = title,
 				TextColor3 = themes.TextColor,
-				TextSize = 9,
+				TextSize = textSize,
 				TextTransparency = 0.10000000149012
 			})
 		})
@@ -2126,7 +2126,7 @@ do
 		end
 
 		percent = math.clamp(percent, 0, 1)
-		value = value or (min + (max - min) * percent)
+		value = value or string.format("%.3f", (min + (max - min) * percent))
 
 		slider.TextBox.Text = value
 		utility:Tween(bar.Fill, {Size = UDim2.new(percent, 0, 1, 0)}, 0.1)
