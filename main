@@ -767,6 +767,11 @@ do
 
 		return textt
 	end
+	
+	function section:removeText(textt)
+		table.remove(self.modules, textt)
+		textt:Destroy()
+	end
 
 	function section:addToggle(title, default, callback)
 		local toggle = utility:Create("ImageButton", {
