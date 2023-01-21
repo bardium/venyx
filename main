@@ -769,7 +769,7 @@ do
 	end
 	
 	function section:removeText(textt)
-		table.remove(self.modules, textt)
+		table.remove(self.modules, table.find(self.modules, textt))
 		--self:Resize()
 
 		local text = textt.Title
