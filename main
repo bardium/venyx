@@ -770,7 +770,12 @@ do
 	
 	function section:removeText(textt)
 		table.remove(self.modules, textt)
-		textt:Destroy()
+		--self:Resize()
+
+		local text = textt.Title
+		local debounce
+		
+		return textt
 	end
 
 	function section:addToggle(title, default, callback)
