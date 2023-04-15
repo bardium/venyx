@@ -767,14 +767,14 @@ do
 
 		return textt
 	end
-
+	
 	function section:removeText(textt)
 		table.remove(self.modules, table.find(self.modules, textt))
 		--self:Resize()
 
 		local text = textt.Title
 		local debounce
-
+		
 		return textt
 	end
 
@@ -1739,7 +1739,7 @@ do
 		return slider
 	end
 
-	function section:addDropdown(title, list, default, callback)
+	function section:addDropdown(title, list, callback)
 		local dropdown = utility:Create("Frame", {
 			Name = "Dropdown",
 			Parent = self.container,
@@ -1824,7 +1824,6 @@ do
 		table.insert(self.modules, dropdown)
 		--self:Resize()
 
-		local this = {}
 		local search = dropdown.Search
 		local focused
 
@@ -1853,7 +1852,7 @@ do
 		search.TextBox:GetPropertyChangedSignal("Text"):Connect(function()
 			if focused then
 				local list = utility:Sort(search.TextBox.Text, list)
-				list = #list ~= 0 and list
+				list = #list ~= 0 and list 
 
 				self:updateDropdown(dropdown, nil, list, callback)
 			end
@@ -1863,24 +1862,7 @@ do
 			self:Resize()
 		end)
 
-		if (default) then
-			search.TextBox.Text = default
-		end
-
-		function this:Get()
-			return search.TextBox.Text
-		end
-
-		local _self = self
-		function this:updateDropdown(title, list, callback)
-			return _self:updateDropdown(dropdown, title, list, callback)
-		end
-
-		return setmetatable({}, {
-			__index = function(t, k)
-				return this[k] or dropdown[k]
-			end
-		})
+		return dropdown
 	end
 
 	-- class functions
